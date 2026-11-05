@@ -1,13 +1,61 @@
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-*, *:before, *:after {
-    box-sizing: inherit;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 body {
   padding: 0;
   margin: 0;
 }
 .wrapper {
-    width: 400px;
+  width: 400px;
+}
+
+.calculator-screen {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 40px;
+  text-align: right;
+  padding: 10px 20px;
+}
+
+/* buttons */
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.calculator-buttons button {
+  font-size: 40px;
+  cursor: pointer;
+  color: #000000;
+  border: 1px solid black;
+  background-color: #d2d4d6;
+  padding: 20px 10px;
+}
+.calculator-buttons button:hover {
+  background-color: #edeff2;
+}
+.calculator-buttons button:active {
+  background-color: #c2c3c5;
+}
+/* special buttons */
+.calculator-buttons .symbol {
+  background-color: #df8d4a;
+  color: #ffffff;
+}
+.calculator-buttons .symbol:hover {
+  background-color: #e09354;
+}
+.calculator-buttons .symbol:active {
+  background-color: #dd8740;
+}
+.wide2 {
+  grid-column: span 2;
+}
+.wide3 {
+  grid-column: span 3;
 }

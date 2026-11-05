@@ -1,25 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Calculator App</title>
-    
+
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
- 
-  </head>  
+    <link rel="stylesheet" href="style.css" />
+  </head>
   <body>
     <div class="wrapper">
-        <section class="calculator-screen">
+      <section class="calculator-screen">
+        <!-- default display value is 0 -->
+        <div class="display">0</div>
+      </section>
 
-        </section>
-    
-        <section class="calculator-buttons">
- 
-        </section>
+      <section class="calculator-buttons">
+        <!-- row 1 -->
+        <button class="wide2" data-value="C">C</button>
+        <button data-value="back">&larr;</button>
+        <button class="symbol" data-value="/">&divide;</button>
+
+        <!-- row 2-->
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="symbol" data-value="*">&times;</button>
+
+        <!-- row 3-->
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button class="symbol" data-value="-">&minus;</button>
+
+        <!-- row 4-->
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button class="symbol" data-value="+">&plus;</button>
+
+        <!-- row 5-->
+        <button class="wide3">0</button>
+        <button class="symbol" data-value="=">=</button>
+      </section>
     </div>
+
+    <!-- link to external js sheet -->
+    <script src="script.js"></script>
   </body>
 </html>
