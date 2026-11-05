@@ -53,7 +53,7 @@ function processNonNumber(symbol) {
         prev = null;
     } else if (symbol === "back") {
         done = false;
-        if (current.length <= 1) { // last removed, so back to default
+        if (current.length <= 1 || current === '-' || (current.length === 2 && current.startsWith('-'))) { // last removed, so back to default
             current = "0";
         } else {
             // take all but last entry
@@ -70,6 +70,10 @@ function processNonNumber(symbol) {
             result = 0;
             done = true;
         }
+    } else if (symbol === '.') { // new functionality
+        makeDecimal();
+    } else if (symbol === 'negative') {
+        makeNegative();
     } else {
         processOperation(symbol);
     }
@@ -101,5 +105,32 @@ function calc(number) {
         result += number;
     } else if (prev === '-') {
         result -= number;
+    } else if (prev === '%') { // extra functionality: modulo
+        result %= number;
+    }
+}
+
+function makeNegative() {
+    if (current === "" || current === "0") { // no sign flip
+        return;
+    }
+    if (current.startsWith("-")) {
+        // remove leading - to make positive
+        current = current.substring(1);
+    } else {
+        current = '-' + current;
+    }
+}
+
+function makeDecimal() {
+    // new number, so start with 0.__
+    if (done || current === "") {
+        current = "0.";
+        done = false;
+        return;
+    }
+    // if current doesnt already have a decimal, then we can add one
+    if (!current.includes(".")) {
+        current += ".";
     }
 }
