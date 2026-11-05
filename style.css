@@ -9,18 +9,25 @@ html {
 body {
   padding: 0;
   margin: 0;
+
+  /* center page contents  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 .wrapper {
   width: 400px;
 }
 
+/* display area for results of calculations */
 .calculator-screen {
   background-color: #000000;
   color: #ffffff;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 40px;
   text-align: right;
-  padding: 10px 20px;
+  padding: 20px 20px;
 }
 
 /* buttons */
@@ -53,6 +60,9 @@ body {
 .calculator-buttons .symbol:active {
   background-color: #dd8740;
 }
+
+/* no longer needed bc more functionality was added (i.e. more buttons), so less space allocated to longer elements like this
+but this would give 2 columns or 3 columns worth of space in the grid to C and 0 if applied to those elements as classes */
 .wide2 {
   grid-column: span 2;
 }
