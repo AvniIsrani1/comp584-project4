@@ -28,6 +28,9 @@ body {
   font-size: 40px;
   text-align: right;
   padding: 20px 20px;
+  /* keep everything on one line */
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 /* buttons */
